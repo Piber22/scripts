@@ -13,7 +13,7 @@ import tempfile
 # Configuração da página
 # -------------------------------------------------
 st.set_page_config(page_title="Gerenciador de Longas", layout="centered")
-st.title("Gerenciador de Longas")
+st.title("🛏️ Gerenciador de Longas")
 st.markdown(
     "Faça upload do **PDF atual** para atualizar a planilha **Longas.xlsx**.\n"
 )
@@ -23,14 +23,14 @@ st.markdown(
 # -------------------------------------------------
 col1, col2 = st.columns(2)
 with col1:
-    pdf_novo_file = st.file_uploader("PDF Atual (data.pdf)", type="pdf", key="novo")
+    pdf_novo_file = st.file_uploader("📄 PDF Atual (data.pdf)", type="pdf", key="novo")
 with col2:
-    pdf_antigo_file = st.file_uploader("PDF Anterior (opcional)", type="pdf", key="antigo")
+    pdf_antigo_file = st.file_uploader("📄 PDF Anterior (opcional)", type="pdf", key="antigo")
 
 # -------------------------------------------------
 # Botão de processamento
 # -------------------------------------------------
-if st.button("Atualizar Longas", type="primary"):
+if st.button("🚀 Atualizar Longas", type="primary"):
     if not pdf_novo_file:
         st.error("Faça upload do PDF atual.")
     else:
@@ -224,7 +224,7 @@ if st.button("Atualizar Longas", type="primary"):
                     # -------------------------------------------------
                     with open(excel_path, "rb") as f:
                         st.download_button(
-                            label=f"Baixar Longas.xlsx ({len(df_new)} leitos, {baixas} baixas)",
+                            label=f"📥 Baixar Longas.xlsx ({len(df_new)} leitos, {baixas} baixas)",
                             data=f,
                             file_name=f"Longas_{data_pdf.replace('/', '-')}.xlsx",
                             mime="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
