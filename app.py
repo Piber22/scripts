@@ -18,6 +18,8 @@ st.markdown("Faça upload do **PDF atual** para atualizar a planilha **Longas.xl
 col1, col2 = st.columns(2)
 with col1:
     pdf_novo_file = st.file_uploader("PDF Atual (data.pdf)", type="pdf", key="novo")
+with col2:
+    pdf_antigo_file = st.file_uploader("PDF Anterior (opcional)", type="pdf", key="antigo")
 
 if st.button("Atualizar Longas", type="primary"):
     if not pdf_novo_file:
